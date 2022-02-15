@@ -1,25 +1,41 @@
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { useSearchParams, useNavigate, useLocation, useParams } from "react-router-dom";
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    let { wsName, pName, vName } = useParams();
+    if (!pName) {
+        pName = "defaultPage";
+    }
+    if (!vName) {
+        vName = "defaultView";
+    }
+    let navigate = useNavigate();
+    var link;
+    if (wsName) {
+
+        link = "/";
+        link += encodeURIComponent(wsName) + "/" + encodeURIComponent(pName) + "/" + encodeURIComponent(vName);
+    } else {
+        //get from history
+        //if not available
+        link = "/";
+        link += encodeURIComponent("Default Workspace") + "/" + encodeURIComponent("Default Page") + "/" + encodeURIComponent("Default View");
+
+    }
+    useEffect(() => {
+        if (link) {
+            return navigate(link);
+        }
+    }, [link]);
+    return (
+        <h3>This is App</h3>
+    ); 
 }
+
 
 export default App;

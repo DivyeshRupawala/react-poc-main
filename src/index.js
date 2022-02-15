@@ -2,16 +2,41 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import registerServiceWorker from './registerServiceWorker';
+
+import { BrowserRouter } from 'react-router-dom';
+import {
+    Route,
+    Link,
+    Routes,
+    Navigate
+} from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+import View from './components/View';
+import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+    <BrowserRouter>
+        <div className="App">
+            <header className="App-header">
+            </header>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+            <Navbar />
+            <div className="App-intro">
+                <Routes>
+                    <Route exact path="/" element={<App />} />
+                    <Route path="/:wsName/" element={<App />} />
+                    <Route path="/:wsName/:pName" element={<App />} />
+                    <Route path="/:wsName/:pName/:vName" element={<View />} />
+                    <Route
+                        path="*"
+                        element={<Navigate to="/" />}
+                    />
+                </Routes>
+            </div>
+        </div>
+    </BrowserRouter>
+    , document.getElementById('root')
+);
+registerServiceWorker();
