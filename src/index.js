@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import {
     Route,
     Link,
@@ -17,7 +17,7 @@ import View from './components/View';
 import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
 
 ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
         <div className="App">
             <header className="App-header">
             </header>
@@ -36,7 +36,7 @@ ReactDOM.render(
                 </Routes>
             </div>
         </div>
-    </BrowserRouter>
+    </HashRouter>
     , document.getElementById('root')
 );
 registerServiceWorker();
