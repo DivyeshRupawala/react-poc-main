@@ -12,6 +12,7 @@
   height: 50px;
   padding: 20px;
   color: white;
+  display: none;
 }
 
 .App-title {
@@ -49,4 +50,14 @@ ul {
   text-decoration: none;
   color: #fff;
   display: block;
+}
+
+.view {
+    height: 20em;
+    width: 20em;
+    background-color: #222;
+    color: white;
+    position: absolute;
+    left: 30em;
+    top: 10em;
 }

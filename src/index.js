@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import {
+    Provider,
+    KeepAlive,
+} from 'react-keep-alive';
+
 
 import { BrowserRouter, HashRouter } from 'react-router-dom';
 import {
@@ -25,14 +30,14 @@ ReactDOM.render(
             <Navbar />
             <div className="App-intro">
                 <Routes>
-                    <Route exact path="/" element={<App />} />
-                    <Route path="/:wsName/" element={<App />} />
-                    <Route path="/:wsName/:pName" element={<App />} />
-                    <Route path="/:wsName/:pName/:vName" element={<View />} />
-                    <Route
-                        path="*"
-                        element={<Navigate to="/" />}
-                    />
+                    <Route exact path="/" element={
+                        <App />} />
+                    <Route path="/:wsName/" element={<Provider>
+                        <KeepAlive name="view"><View /></KeepAlive></Provider>} />
+                    <Route path="/:wsName/:pName" element={<Provider>
+                        <KeepAlive name="view"><View /></KeepAlive></Provider>} />
+                    <Route path="/:wsName/:pName/:vName" element={<Provider>
+                        <KeepAlive name="view"><View /></KeepAlive></Provider>} />
                 </Routes>
             </div>
         </div>

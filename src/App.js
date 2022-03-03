@@ -24,7 +24,7 @@ function App() {
         //get from history
         //if not available
         link = "/";
-        link += encodeURIComponent("Default Workspace") + "/" + encodeURIComponent("Default Page") + "/" + encodeURIComponent("Default View");
+        link += encodeURIComponent("Workspace1") + "/" + encodeURIComponent("SM Widgets");
 
     }
     useEffect(() => {

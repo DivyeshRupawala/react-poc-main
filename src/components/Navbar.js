@@ -7,19 +7,26 @@ import './Navbar.css';
 import { IconContext } from 'react-icons';
 import { SidebarKiboData } from './SidebarKiboData';
 import Workspace from './Workspace';
+import { useNavigate } from "react-router-dom";
+
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
+    let navigate = useNavigate();
+    const goBack = () => navigate(-1);
     
   return (
     <>
         <IconContext.Provider value={{color:'#fff'}}>
        
         <div className='navbar'>
-            <Link to="#" className="menu-bars">
+            <Link to="#" className="nav-icon menu-bars">
                 <FaIcons.FaBars onClick={showSidebar}/>
-            </Link>
+                  </Link>
+                  <Link to="#" className="nav-icon back">
+                      <FaIcons.FaAngleLeft onClick={goBack} />
+                  </Link>
         </div>
 
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
@@ -29,19 +36,6 @@ function Navbar() {
                         <AiIcons.AiOutlineClose></AiIcons.AiOutlineClose>                     
                     </Link>
                 </li>
-
-                {
-                    SidebarData.map((item, index) => {
-                        return (
-                            <li key={index} className={item.cName}>
-                                <Link to={item.path}>
-                                    {item.icon}
-                                    <span>{item.title}</span>
-                                </Link>
-                            </li>
-                        )
-                    })
-                }
 
                 {SidebarKiboData.map((item, index) => { return <Workspace key={index} index={index} item={item}/> })}                
                 
