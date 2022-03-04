@@ -32,12 +32,11 @@ ReactDOM.render(
                 <Routes>
                     <Route exact path="/" element={
                         <App />} />
-                    <Route path="/:wsName/" element={<Provider>
-                        <KeepAlive name="view"><View /></KeepAlive></Provider>} />
-                    <Route path="/:wsName/:pName" element={<Provider>
-                        <KeepAlive name="view"><View /></KeepAlive></Provider>} />
-                    <Route path="/:wsName/:pName/:vName" element={<Provider>
-                        <KeepAlive name="view"><View /></KeepAlive></Provider>} />
+                    <Route path="/:wsName/" element={<View />} >
+                        <Route path=":pName" element={<View />} >
+                            <Route path=":vName" element={<View />} />
+                        </Route>
+                    </Route>
                 </Routes>
             </div>
         </div>
