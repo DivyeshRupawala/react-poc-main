@@ -18,6 +18,7 @@ import {
 } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
+import WorkspaceLayout from './components/WorkspaceLayout';
 import View from './components/View';
 import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
 
@@ -32,7 +33,7 @@ ReactDOM.render(
                 <Routes>
                     <Route exact path="/" element={
                         <App />} />
-                    <Route path="/:wsName/" element={<View />} >
+                    <Route path="/:wsName/" element={<WorkspaceLayout />} >
                         <Route path=":pName" element={<View />} >
                             <Route path=":vName" element={<View />} />
                         </Route>

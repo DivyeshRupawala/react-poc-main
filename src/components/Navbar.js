@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from 'react-router-dom';
-import { SidebarData} from './SidebarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
 import { SidebarKiboData } from './SidebarKiboData';
@@ -20,19 +19,19 @@ function Navbar() {
     <>
         <IconContext.Provider value={{color:'#fff'}}>
        
-        <div className='navbar'>
+        <div className='ws-navbar'>
             <Link to="#" className="nav-icon menu-bars">
                 <FaIcons.FaBars onClick={showSidebar}/>
-                  </Link>
-                  <Link to="#" className="nav-icon back">
-                      <FaIcons.FaAngleLeft onClick={goBack} />
-                  </Link>
+            </Link>
+            <Link to="#" className="nav-icon back">
+                <FaIcons.FaAngleLeft onClick={goBack} />
+            </Link>
         </div>
 
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
             <ul className='nav-menu-items' onClick={showSidebar}>
                 <li className='navbar-toggle'>
-                    <Link to="#" className='menu-bars'>
+                    <Link to="#" className='menu-close'>
                         <AiIcons.AiOutlineClose></AiIcons.AiOutlineClose>                     
                     </Link>
                 </li>

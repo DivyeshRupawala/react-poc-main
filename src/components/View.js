@@ -1,12 +1,30 @@
 
 import { useParams } from "react-router-dom";
-import ViewC from './ViewC';
+import { Dashboard } from ".././pages/Dashboard";
+import { Tables } from ".././pages/Tables";
+import { Profile } from ".././pages/Profile";
 
-function View() {
-    let { wsName, pName, vName } = useParams();
-    
+
+
+function SelectView(props) {
+  let component = props.componentName;
+  switch(component){
+    case "Dashboard":
+      return <Dashboard/>;
+      case "Tables":
+      return <Tables/>;
+      case "Profile":
+      return <Profile/>;
+  }
+}
+
+function View(props) {
+    let { wsName, pName } = useParams();
+    let component = pName;
     return (
-        <ViewC wsName={wsName} pName={pName} vName={vName} />
+      <div>
+        <SelectView componentName={component}/>
+        </div>
   );
 }
 

@@ -5,7 +5,7 @@ export class Workspace extends React.Component {
   constructor(props){
     super(props);
     this.item = this.props.item;
-    this.index = this.props.item;
+    this.index = this.props.index;
   }
 
   render() {
@@ -13,7 +13,7 @@ export class Workspace extends React.Component {
     return (
         <>
           <li key={this.index} className="nav-text">
-                <Link to={this.item.Name + '/' + this.item.PagesMap[this.item.DefaultPageId].Name}>
+                <Link to={this.item.Name + '/' + this.item.DefaultPageName}>
                   <i className={'fa fa-' + this.item.Image}></i>
                   <span>{this.item.Title}</span>
               </Link>

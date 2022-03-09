@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import { useSearchParams, useNavigate, useLocation, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
         //get from history
         //if not available
         link = "/";
-        link += encodeURIComponent("Workspace1") + "/" + encodeURIComponent("SM Widgets");
+        link += encodeURIComponent("Workspace 1") + "/" + encodeURIComponent("Dashboard");
 
     }
     useEffect(() => {
