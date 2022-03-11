@@ -1,7 +1,13 @@
 import React from "react";
+import { subscribe } from "../utils/PubSub";
 import "./Tables.css";
 
 export const Tables = () => {
+
+  const unsubscribe = subscribe("header-refresh", "3", data => {
+		console.log("Table Component: Got header-refresh data:", data)
+	});
+
   return (
     <div className="d-flex">
       <div></div>

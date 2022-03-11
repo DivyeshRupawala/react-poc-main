@@ -1,7 +1,12 @@
 import React from "react";
 import "./Profile.css"
+import { subscribe } from "../utils/PubSub"
 
 export const Profile = () => {
+
+	const unsubscribe = subscribe("header-refresh", "2", data => {
+		console.log("Profile Component: Got header-refresh data:", data)
+	});
 
 	return (
 		<div className="d-flex profile">

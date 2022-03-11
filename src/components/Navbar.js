@@ -7,6 +7,7 @@ import { IconContext } from 'react-icons';
 import { SidebarKiboData } from './SidebarKiboData';
 import Workspace from './Workspace';
 import { useNavigate } from "react-router-dom";
+import { publish } from "../utils/PubSub"
 
 
 function Navbar() {
@@ -14,6 +15,9 @@ function Navbar() {
     const showSidebar = () => setSidebar(!sidebar);
     let navigate = useNavigate();
     const goBack = () => navigate(-1);
+    const publishEvent = () => {
+        publish("header-refresh", { dummyData: [1,2,3,4]});          
+    }
     
   return (
     <>
@@ -26,6 +30,9 @@ function Navbar() {
             <Link to="#" className="nav-icon back">
                 <FaIcons.FaAngleLeft onClick={goBack} />
             </Link>
+            <Link to="#" className="nav-icon back">
+                <FaIcons.FaAdjust onClick={publishEvent} />
+            </Link>           
         </div>
 
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
