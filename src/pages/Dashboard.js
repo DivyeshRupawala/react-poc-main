@@ -9,8 +9,13 @@ import {
   CDBLink } from "cdbreact";
 import { Pie, Bar } from "react-chartjs-2";
 import "./Dashboard.css";
+import { subscribe } from "../utils/PubSub"
 
 export const Dashboard = () => {
+
+	const unsubscribe = subscribe("header-refresh", "1", data => {
+		console.log("Dashboard Component: Got header-refresh data:", data)
+	});
 
   const data = {
     chart1:{

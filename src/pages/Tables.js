@@ -1,7 +1,13 @@
 import React from "react";
 import { CDBTable, CDBTableHeader, CDBTableBody } from "cdbreact";
+import { subscribe } from "../utils/PubSub"
 
 export const Tables = () => {
+
+  const unsubscribe = subscribe("header-refresh", "3", data => {
+		console.log("Table Component: Got header-refresh data:", data)
+	});
+
   return (
     <div className="d-flex">
       <div>
