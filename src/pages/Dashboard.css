@@ -101,3 +101,9 @@
 		margin:10px 0;
 	}
 }
+
+.pie-chart-container{
+	width:"250px";
+	height:"150px";
+	margin:"0 -4rem";
+}

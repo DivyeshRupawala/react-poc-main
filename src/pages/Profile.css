@@ -39,3 +39,23 @@
 		grid-template-columns: 1fr;
 	}
 }
+
+.button {
+	border-radius: 47px;
+    background-color: #fff;
+    border: 2px solid #000;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    color: #000;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+.button:hover {
+	background-color: #000;
+	color: #fff;
+  }

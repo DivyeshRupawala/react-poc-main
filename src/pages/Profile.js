@@ -1,5 +1,4 @@
 import React from "react";
-import { CDBBtn, CDBIframe, CDBView } from "cdbreact";
 import "./Profile.css"
 
 export const Profile = () => {
@@ -23,7 +22,7 @@ export const Profile = () => {
 												Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione perferendis quod animi dignissimos
 											</p>
 											<div className="justify-content-end pr-1">
-												<CDBBtn color="dark" outline>More</CDBBtn>
+												<button className="button">More</button>
 											</div>
 										</div>
 									</div>
@@ -40,9 +39,7 @@ export const Profile = () => {
 					            <div className="p-3">
 					              <h3>Basic</h3>
 					              <p>This is just a card text Get important notifications about you or activity you've missed </p>
-					              <CDBBtn style={{background:"#333", border:"none"}}>
-					                Button
-					                </CDBBtn>
+					              <button className="button">Button</button>
 					            </div>
 					          </div>
 									</div>
@@ -52,9 +49,7 @@ export const Profile = () => {
 					              <h4 className="mt-3 text-white">Heading</h4>
 					              <p className="text-white">Paragraph</p>
 					              <div className="d-flex justify-content-center mt-auto">
-					                <CDBBtn color="light" flat circle>
-					                  Button
-					                </CDBBtn>
+								  <button className="button">Button</button>
 					              </div>
 					            </div>
 					          </div>
@@ -76,8 +71,8 @@ export const Profile = () => {
 				              <p>Senior Software Developer</p>
 				              <p className="text-muted">Detroit, USA</p>
 				              <div className="d-flex justify-content-center flex-wrap">
-				                <CDBBtn className="mr-2" size="small" color="dark"><i className="fas fa-user-plus"></i> Connect</CDBBtn>
-				                <CDBBtn size="small" color="warning"> Send Message </CDBBtn>
+				                <button className="button"><i className="fas fa-user-plus"></i> Connect</button>
+				                <button className="button"> Send Message </button>
 				              </div>
 				            </div>
 				          </div>
@@ -94,9 +89,8 @@ export const Profile = () => {
 											<p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas.</p>
 										</div>
 										<div className="card-footer">
-											<a className="p-2" href="#profile">
-												Live Preview
-												<i className="far fa-image ml-1"></i>
+											<a href="#">
+												View More
 											</a>
 										</div>
 									</div>
@@ -113,7 +107,7 @@ export const Profile = () => {
 											<p className="card-text text-center ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas.</p>
 										</div>
 										<div className="card-footer text-center">
-											<a className="p-2" href="#profile">Live Preview<i className="far fa-image ml-1"></i></a>
+											<a href="#">Card Footer</a>
 										</div>
 									</div>
 								</div>
@@ -123,13 +117,10 @@ export const Profile = () => {
 				              <h4 className="mt-3">Heading</h4>
 				              <p>Paragraph</p>
 				            </div>
-				            <CDBView>
-				              <CDBIframe src="https://www.youtube.com/embed/xnczyP2jSR0"></CDBIframe>
-				            </CDBView>
-				            <div className="p-3">
-				              <CDBBtn color="dark" flat outline circle>
+				            <div>
+				              <button className="button">
 				                Button
-				              </CDBBtn>
+				              </button>
 				            </div>
 				          </div>
 								</div>
