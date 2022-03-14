@@ -33,6 +33,7 @@
 }
 
 .nav-text {
+    width: 193px;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -66,10 +67,10 @@
 .navbar-toggle {
     background-color: #fff;
     width: 100%;
-    height: 80px;
-    display: flex;
+    height: 50px;
+    /* display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: center; */
 }
 
 span {

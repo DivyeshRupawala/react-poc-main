@@ -1,61 +1,64 @@
 .profile .cards-container1 {
-	display:grid;
-	grid-gap:30px;
-	grid-template-columns: 1fr 2fr;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr 2fr;
 }
 .profile .mini-container {
-	display:grid;
-	grid-gap:30px;
-	grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
 }
 .profile .cards-container2 {
-	margin-top:20px;
-	display:grid;
-	grid-gap:40px;
-	grid-template-columns: repeat(2, 1fr)
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
 }
 .profile .cards-container2 .card {
-	max-width:500px;
+  max-width: 500px;
 }
 
-@media (max-width:1240px) {
-	.profile .cards-container1 {
-		grid-template-columns: repeat(2, 1fr);
-	}
-	.profile .mini-container {
-		grid-template-columns: 1fr;
-	}
+@media (max-width: 1240px) {
+  .profile .cards-container1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .profile .mini-container {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width:900px) {
-	.profile .cards-container1 {
-		margin:0 auto;
-		max-width:450px;
-		grid-template-columns: 1fr;
-	}
-	.profile .cards-container2 {
-		margin:30px auto;
-		max-width:450px;
-		grid-template-columns: 1fr;
-	}
+@media (max-width: 900px) {
+  .profile .cards-container1 {
+    margin: 0 auto;
+    max-width: 450px;
+    grid-template-columns: 1fr;
+  }
+  .profile .cards-container2 {
+    margin: 30px auto;
+    max-width: 450px;
+    grid-template-columns: 1fr;
+  }
 }
 
 .button {
-	border-radius: 47px;
-    background-color: #fff;
-    border: 2px solid #000;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    color: #000;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
+  border-radius: 47px;
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  color: #000;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
 .button:hover {
-	background-color: #000;
-	color: #fff;
-  }
+  background-color: #000;
+  color: #fff;
+}
+.card-container-style {
+  box-shadow: 10px 10px 30px #aaaaaa;
+}
