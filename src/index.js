@@ -3,24 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import {
-    Provider,
-    KeepAlive,
-} from 'react-keep-alive';
 
-
-import { BrowserRouter, HashRouter } from 'react-router-dom';
+import {HashRouter } from 'react-router-dom';
 import {
     Route,
-    Link,
     Routes,
-    Navigate
 } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import WorkspaceLayout from './components/WorkspaceLayout';
 import View from './components/View';
-import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
 
 ReactDOM.render(
     <HashRouter>
