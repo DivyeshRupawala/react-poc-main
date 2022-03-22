@@ -1,6 +1,12 @@
 import React from "react";
+import { publish } from "../utils/PubSub"
 
 export const KPIWidget = () => {
+
+  const publishEvent = () => {
+    publish("widget-binding", { data: [{sales: 2000}]});          
+  }
+
   return (
     <div className="card-bg w-100 border d-flex flex-column">
       <div className="p-4 d-flex flex-column h-100">
@@ -10,7 +16,7 @@ export const KPIWidget = () => {
             <i className="fas fa-suitcase"></i>
           </div>
         </div>
-        <h4 className="my-4 text-right text-dark h2 font-weight-bold">
+        <h4 className="my-4 text-right text-dark h2 font-weight-bold" onClick={publishEvent}>
           $2,000
         </h4>
         <p className="mt-2 text-success small">

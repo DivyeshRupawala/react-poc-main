@@ -1,60 +1,81 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import { subscribe } from "../utils/PubSub";
 
-export const LineChartWidget = () => {
-  const data = {
-    chart2: {
-      labels: [
-        "Eating",
-        "Drinking",
-        "Sleeping",
-        "Designing",
-        "Coding",
-        "Cycling",
-        "Running",
-      ],
-      datasets: [
-        {
-          label: "My First dataset",
-          backgroundColor: "rgba(255, 153, 51, 0.8)",
-          borderColor: "rgb(102, 51, 0)",
-          data: [65, 59, 75, 81, 56, 55, 40],
-        },
-        {
-          label: "My Second dataset",
-          backgroundColor: "#2F80ED",
-          borderColor: "rgb(0, 41, 102)",
-          data: [38, 48, 60, 79, 96, 47, 80],
-        },
-      ],
-    },
-  };
-  const options = {
-    responsive: true,
-    maintainAspectRatio: false,
-    legend: { display: false },
-    scales: {
-      xAxes: [
-        {
-          ticks: {
-            display: false,
+export class LineChartWidget extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {sales: 1000};
+    this.data = {
+      chart2: {
+        labels: [
+          "Eating",
+          "Drinking",
+          "Sleeping",
+          "Designing",
+          "Coding",
+          "Cycling",
+          "Running",
+        ],
+        datasets: [
+          {
+            label: "My First dataset",
+            backgroundColor: "rgba(255, 153, 51, 0.8)",
+            borderColor: "rgb(102, 51, 0)",
+            data: [65, 59, 75, 81, 56, 55, 40],
           },
-        },
-      ],
-      yAxes: [
-        {
-          gridLines: {
-            display: false,
+          {
+            label: "My Second dataset",
+            backgroundColor: "#2F80ED",
+            borderColor: "rgb(0, 41, 102)",
+            data: [38, 48, 60, 79, 96, 47, 80],
           },
-          ticks: {
-            display: false,
+        ],
+      },
+    };
+
+    this.options = {
+      responsive: true,
+      maintainAspectRatio: false,
+      legend: { display: false },
+      scales: {
+        xAxes: [
+          {
+            ticks: {
+              display: false,
+            },
           },
-        },
-      ],
-    },
-  };
-  return (
-    <div
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: false,
+            },
+            ticks: {
+              display: false,
+            },
+          },
+        ],
+      },
+    };
+  }
+
+  componentDidMount() {
+    this.unsubscribe = subscribe("widget-binding", "12", (data) => {
+      console.log("Line Chart: Widget-Binding", data);          
+      this.setState({
+        sales: data.data[0].sales
+      });
+    }); 
+  }
+
+  componentWillUnmount() {
+    
+  }
+  
+  render() {
+    return (
+      <div
       className="card-bg w-100 d-flex flex-column border d-flex flex-column"
       style={{ gridRow: "span 2" }}
     >
@@ -67,7 +88,7 @@ export const LineChartWidget = () => {
         </div>
         <div className="mt-5 d-flex align-items-center justify-content-between">
           <div>
-            <h4 className="m-0 h1 font-weight-bold text-dark">452</h4>
+            <h4 className="m-0 h1 font-weight-bold text-dark">{this.state.sales}</h4>
             <p className="text-success small">
               <i className="fas fa-angle-up p-0"></i> 18.52%
             </p>
@@ -98,7 +119,7 @@ export const LineChartWidget = () => {
           </div>
         </div>
         <div className="p-0 mt-auto">
-          <Bar height={250} data={data.chart2} options={options} />
+          <Bar height={250} data={this.data.chart2} options={this.options} />
         </div>
         <p className="c-p text-dark font-weight-bold text-right mt-3 mb-0">
           More Details
@@ -106,5 +127,6 @@ export const LineChartWidget = () => {
         </p>
       </div>
     </div>
-  );
-};
+    );
+  }
+}
