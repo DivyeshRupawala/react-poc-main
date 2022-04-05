@@ -5,6 +5,7 @@ import { KPIWidget } from "../components/KPIWidget";
 import { PieChartWidget } from "../components/PieChartWidget";
 import { LineChartWidget } from "../components/LineChartWidget";
 import { PivotWidget } from "../components/PivotWidget";
+import LineChart from "../components/LineChart";
 
 export const Dashboard = () => {
   const unsubscribe = subscribe("header-refresh", "1", (data) => {
@@ -29,7 +30,8 @@ export const Dashboard = () => {
                 <KPIWidget />
                 <PieChartWidget />
                 <LineChartWidget />
-                <PivotWidget />
+                <PivotWidget />                
+                <LineChart />                
               </div>
             </div>
             <footer className="footer">

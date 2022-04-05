@@ -4,8 +4,7 @@ import { Dashboard } from ".././pages/Dashboard";
 import { Tables } from ".././pages/Tables";
 import { Pivot } from ".././pages/Pivot";
 import { Profile } from ".././pages/Profile";
-
-
+import LineChart from "./LineChart";
 
 function SelectView(props) {
   let component = props.componentName;
@@ -18,6 +17,8 @@ function SelectView(props) {
       return <Tables/>;
       case "Profile":
       return <Profile/>;
+      case "Linechart":
+      return <LineChart/>;
   }
 }
 

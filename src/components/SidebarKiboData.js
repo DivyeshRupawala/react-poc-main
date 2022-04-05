@@ -4048,6 +4048,25 @@ export const SidebarKiboData = [
 				"ActionButtonBindings": null,
 				"Roles": null,
 				"ModuleId": null
+			},
+			{
+				"Id": 633416,
+				"PageId": "d96dbf2c-ac51-40f6-9c3a-1236213b506b",
+				"WorkspaceId": 316288,
+				"WorkspaceName": "Workspace 1",
+				"DefaultViewId": 933686,
+				"Title": "Linechart",
+				"Name": "Linechart",
+				"IsDefault": true,
+				"DisplayOrder": 0,
+				"ViewIds": [
+					93686
+				],
+				"Views": [],
+				"FilterBindings": null,
+				"ActionButtonBindings": null,
+				"Roles": null,
+				"ModuleId": null
 			}
 		],
 		"Roles": [
