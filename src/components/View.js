@@ -25,7 +25,7 @@ function View(props) {
     let { wsName, pName } = useParams();
     let component = pName;
     return (
-      <div>
+      <div className="View">
         <SelectView componentName={component}/>
         </div>
   );

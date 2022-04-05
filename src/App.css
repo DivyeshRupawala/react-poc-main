@@ -1,3 +1,7 @@
+.View{
+  width: calc(100vw - 260px);
+  height: calc(100vh - 100px);
+}
 .App {
   text-align: center;
 }
@@ -21,6 +25,8 @@
 
 .App-intro {
   font-size: large;
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
 }
 
 @keyframes App-logo-spin {
@@ -60,4 +66,11 @@ ul {
     position: absolute;
     left: 30em;
     top: 10em;
+}
+
+table{
+  display: block;
+  height: 550px;
+  overflow: scroll;
+  font-size: 13px;
 }
