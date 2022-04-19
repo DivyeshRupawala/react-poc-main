@@ -1,8 +1,12 @@
 import React, {useEffect} from 'react';
 
 class Cell extends React.Component {
+  cellClick(e) {
+    console.log("Cell clicked: Cell : "+e.target.attributes[0].value + " Value: "+e.target.textContent)
+  }
+
   render() {
-    return <td key = {this.props.idx} >{this.props.data}</td>;
+    return <td key = {this.props.idx} onClick={this.cellClick} data-cell={this.props.cell}>{this.props.data}</td>;
   }
 }
 
@@ -13,10 +17,11 @@ class Row extends React.Component {
       cells.push(Object.keys(this.props).map((data,id)=>{
         let props = {
           idx:id,
-          data:this.props[data]
+          data:this.props[data],
+          cell:i
         }
-        return (        
-          <Cell {...props}/>
+        return (            
+          <Cell {...props} />          
         )
       }));
     }
@@ -44,12 +49,22 @@ const Table = (props) => {
     return columns;
   }
 
+  const onGridClick = (e) => {    
+    console.log("Grid clicked: Cell : "+e.target.attributes[0].value + " Value: "+e.target.textContent)     
+  }
+
   const returnTableData = () => {
+    const onRowclick = (e) => {         
+      console.log("Row clicked: Cell : "+e.target.attributes[0].value + " Value: "+e.target.textContent)    
+    }
+
     return tableData.map((todos, idx) => {
       const { id } = todos;
       return (
         <tr data-id = {id} key = {id}>
-          <Row {...todos}/>
+          <div onClick={onRowclick}>
+            <Row {...todos}/>
+          </div>          
         </tr>
       )
     });
@@ -63,7 +78,7 @@ const Table = (props) => {
             {tableHeader()}
           </tr>          
         </thead>
-        <tbody>
+        <tbody onClick={onGridClick}>
           {returnTableData()}    
         </tbody>
       </table>
