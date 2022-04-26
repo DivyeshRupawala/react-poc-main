@@ -5,6 +5,7 @@ import { Tables } from ".././pages/Tables";
 import { Pivot } from ".././pages/Pivot";
 import { Profile } from ".././pages/Profile";
 import LineChart from "./LineChart";
+import { MultiWidget } from "../pages/MultiWidget";
 
 function SelectView(props) {
   let component = props.componentName;
@@ -19,6 +20,8 @@ function SelectView(props) {
       return <Profile/>;
       case "Linechart":
       return <LineChart/>;
+      case "MultiWidget":
+        return <MultiWidget />;
   }
 }
 

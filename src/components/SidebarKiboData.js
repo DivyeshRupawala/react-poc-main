@@ -4067,6 +4067,25 @@ export const SidebarKiboData = [
 				"ActionButtonBindings": null,
 				"Roles": null,
 				"ModuleId": null
+			},
+			{
+				"Id": 633413,
+				"PageId": "d96dbf2c-ac51-40f6-9c3a-1236213b506b",
+				"WorkspaceId": 316255,
+				"WorkspaceName": "Workspace 1",
+				"DefaultViewId": 615,
+				"Title": "MultiWidget",
+				"Name": "MultiWidget",
+				"IsDefault": true,
+				"DisplayOrder": 0,
+				"ViewIds": [
+					15
+				],
+				"Views": [],
+				"FilterBindings": null,
+				"ActionButtonBindings": null,
+				"Roles": null,
+				"ModuleId": null
 			}
 		],
 		"Roles": [

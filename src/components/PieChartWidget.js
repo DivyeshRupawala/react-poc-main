@@ -1,6 +1,6 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
-import { subscribe } from "../utils/PubSub";
+import { subscribe, publish } from "../utils/PubSub";
 
 export class PieChartWidget extends React.Component {
   constructor(props) {
@@ -28,6 +28,16 @@ export class PieChartWidget extends React.Component {
         sales: data.data[0].sales
       });
     });   
+
+    this.unsubscribePivotBinding  = subscribe("pivot-binding", "pivot-binding-2", (data) => {
+      console.log("Pivot Binding Data:", data);
+      let newSales = data.data[0].sales * 10;
+      this.setState({
+        sales: newSales
+      });
+
+      publish("calculated-value-binding", { data: [{sales: newSales}]});    
+    });
   }
 
   componentWillUnmount() {
