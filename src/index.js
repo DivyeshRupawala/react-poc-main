@@ -13,9 +13,15 @@ import {
 import Navbar from './components/Navbar';
 import WorkspaceLayout from './components/WorkspaceLayout';
 import View from './components/View';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import allReducers from './reducers';
+
+const store = configureStore({ reducer: allReducers });
 
 ReactDOM.render(
-    <HashRouter>
+    <Provider store={store}>
+        <HashRouter>
         <div className="App">
             <header className="App-header">
             </header>
@@ -34,6 +40,8 @@ ReactDOM.render(
             </div>
         </div>
     </HashRouter>
+    </Provider>
+    
     , document.getElementById('root')
 );
 registerServiceWorker();

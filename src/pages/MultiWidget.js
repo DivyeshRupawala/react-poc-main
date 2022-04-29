@@ -25,8 +25,8 @@ export const MultiWidget = () => {
           <div style={{ height: "calc(100% - 64px)", overflowY: "scroll" }}>
             <div className="d-flex card-section">
               <div className="cards-container">
-                <PivotWidget />       
-                <PieChartWidget />                        
+                <PivotWidget />    
+                <KPIWidget />                        
               </div>
             </div>
             <footer className="footer">
