@@ -45,3 +45,8 @@ ReactDOM.render(
     , document.getElementById('root')
 );
 registerServiceWorker();
+
+// STORE -> GLOBALIZED STATE
+// ACTION -> INCREMENT/DECREMENT
+// REDUCER
+// DISPATCH

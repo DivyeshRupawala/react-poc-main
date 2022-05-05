@@ -3,6 +3,7 @@ import "./Dashboard.css";
 import { subscribe } from "../utils/PubSub";
 import { KPIWidget } from "../components/KPIWidget";
 import { PivotWidget } from "../components/PivotWidget";
+import { NewPivotWidget } from "../components/NewPivotWidget";
 import { PieChartWidget } from "../components/PieChartWidget";
 
 export const MultiWidget = () => {
@@ -26,7 +27,8 @@ export const MultiWidget = () => {
             <div className="d-flex card-section">
               <div className="cards-container">
                 <PivotWidget />    
-                <KPIWidget />                        
+                <KPIWidget /> 
+                <NewPivotWidget />                        
               </div>
             </div>
             <footer className="footer">
